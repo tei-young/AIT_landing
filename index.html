@@ -512,54 +512,303 @@
         
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
+            /* 전체 섹션 패딩 증가 (너무 빡빡하지 않게) */
+            .hero {
+                padding: 55px 0;
             }
             
+            .news-section,
+            .teacher-section,
+            .courses-section,
+            .trial-section,
+            .pricing-section,
+            .contact-section {
+                padding: 45px 0;
+            }
+            
+            section[style*="padding: 80px 0"] {
+                padding: 40px 0 !important;
+            }
+            
+            section[style*="padding: 100px 0"] {
+                padding: 45px 0 !important;
+            }
+            
+            /* 컨테이너 패딩 약간 증가 */
+            .container {
+                padding: 0 12px;
+            }
+            
+            /* 섹션 타이틀 크기 약간 증가 (한 줄 유지하면서) */
+            .hero h1 {
+                font-size: 1.7em;
+                margin-bottom: 12px;
+                line-height: 1.2;
+            }
+            
+            .hero .subtitle {
+                font-size: 0.95em;
+                margin-bottom: 25px;
+                line-height: 1.4;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                line-height: 1.2;
+            }
+            
+            .section-header p {
+                font-size: 0.9em;
+                line-height: 1.3;
+            }
+            
+            .section-header {
+                margin-bottom: 30px;
+            }
+            
+            /* 뉴스 섹션: 2x2 그리드 유지하되 가독성 향상 */
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .news-card {
+                padding: 18px;
+            }
+            
+            .news-card h3 {
+                font-size: 1em;
+                margin-bottom: 10px;
+                line-height: 1.2;
+            }
+            
+            .news-card p {
+                font-size: 0.85em;
+                line-height: 1.4;
+            }
+            
+            /* 이미지 높이 적절히 증가 */
+            .news-card img {
+                height: 120px !important;
+            }
+            
+            /* 강사 섹션 */
             .teacher-card {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 30px;
+                gap: 15px;
+                padding: 25px 15px;
             }
             
-            .contact-grid {
+            .teacher-image {
+                width: 120px;
+                height: 120px;
+                font-size: 30px;
+            }
+            
+            .teacher-info h3 {
+                font-size: 1.3em;
+            }
+            
+            .teacher-info .role {
+                font-size: 0.9em;
+            }
+            
+            .credentials li {
+                font-size: 0.85em;
+                padding: 6px 0;
+            }
+            
+            /* 코스 섹션: 탭 버튼 1줄에 4개 */
+            .course-tabs {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 4px;
+                margin-bottom: 25px;
+            }
+            
+            .tab-button {
+                padding: 8px 12px;
+                font-size: 0.75em;
+                flex: 1;
+                min-width: 70px;
+                max-width: 85px;
+            }
+            
+            /* 코스 카드 */
+            .course-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 15px;
             }
             
-            .container {
-                padding: 0 15px;
+            .course-card {
+                padding: 20px 15px;
             }
             
-            .news-grid,
-            .course-grid,
+            .course-card h3 {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+            
+            .course-card ul li {
+                font-size: 0.85em;
+                margin-bottom: 6px;
+            }
+            
+            .course-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            /* 체험 섹션: 간격과 폰트 크기 증가 */
+            .trial-features {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
+                margin: 30px 0;
+            }
+            
+            .trial-feature {
+                padding: 18px;
+            }
+            
+            .trial-feature h3 {
+                font-size: 1em;
+                margin-bottom: 8px;
+            }
+            
+            .trial-feature p {
+                font-size: 0.85em;
+                line-height: 1.4;
+            }
+            
+            /* 가격 섹션: 원래대로 1개씩 세로 배치 (가독성 최우선) */
             .pricing-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            #video-tab .course-grid,
-            #image-tab .course-grid,
-            #coding-tab .course-grid {
+            .pricing-card {
+                padding: 25px 20px;
+            }
+            
+            .pricing-card h3 {
+                font-size: 1.2em;
+                margin-bottom: 12px;
+            }
+            
+            .price {
+                font-size: 2.2em;
+                margin: 15px 0;
+            }
+            
+            .pricing-card p {
+                font-size: 1em;
+            }
+            
+            .pricing-card ul li {
+                font-size: 0.9em;
+                padding: 6px 0;
+            }
+            
+            .pricing-card ul {
+                margin: 20px 0;
+            }
+            
+            .savings {
+                font-size: 0.85em;
+                padding: 8px 16px;
+            }
+            
+            /* 연락처 섹션 */
+            .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .course-tabs {
-                flex-direction: column;
-                align-items: center;
+            .contact-form {
+                padding: 20px 15px;
             }
             
+            .contact-form h3 {
+                font-size: 1.1em;
+                margin-bottom: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group label {
+                font-size: 0.85em;
+                margin-bottom: 4px;
+            }
+            
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            /* 버튼 크기 축소 */
+            .cta-button {
+                padding: 12px 20px;
+                font-size: 0.85em;
+                margin: 6px;
+            }
+            
+            /* 비전 섹션 */
             .vision-section div[style*="grid-template-columns"] {
                 grid-template-columns: 1fr !important;
+                gap: 15px !important;
             }
             
             .vision-section div[style*="backdrop-filter"] {
-                padding: 30px 20px !important;
+                padding: 20px 15px !important;
             }
             
-            /* Limited Enrollment Section Mobile */
+            .vision-section h3[style*="font-size: 2.2em"] {
+                font-size: 1.3em !important;
+            }
+            
+            .vision-section p[style*="font-size: 1.3em"] {
+                font-size: 0.95em !important;
+            }
+            
+            .vision-section p[style*="font-size: 1.1em"] {
+                font-size: 0.85em !important;
+            }
+            
+            /* Limited Enrollment Section */
             .container div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 10px !important;
+            }
+            
+            /* Limited Enrollment 카드 내용 축소 */
+            section[style*="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"] h2 {
+                font-size: 1.4em !important;
+            }
+            
+            section[style*="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"] p {
+                font-size: 0.9em !important;
+            }
+            
+            section[style*="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"] h3 {
+                font-size: 0.9em !important;
+            }
+            
+            section[style*="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"] div[style*="padding: 40px 30px"] {
+                padding: 15px 10px !important;
+            }
+            
+            section[style*="linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)"] div[style*="font-size: 50px"] {
+                font-size: 30px !important;
+                margin-bottom: 10px !important;
             }
         }
         
@@ -589,7 +838,7 @@
             <div class="hero-content">
                 <div class="urgent-badge">🚨 시대가 바뀌고 있습니다!</div>
                 <h1>우리 아이의 AI 미래,<br>지금 시작하세요</h1>
-                <p class="subtitle">구글 제미나이 13세 허용 | 교육부 AI 리터러시 정책 발표<br>AI 도구를 검색엔진처럼 자유자재로 사용하는 아이로 키우세요</p>
+                <p class="subtitle">AI 시대의 새로운 사고방식, 우리 아이도 배워야 합니다<br>창의성과 생산성을 동시에 키우는 AI 활용법으로 미래 인재의 경쟁력을 만들어가세요</p>
                 <div>
                     <a href="#trial" class="cta-button">무료 체험수업 신청</a>
                     <a href="#courses" class="cta-button secondary">커리큘럼 보기</a>
@@ -612,9 +861,7 @@
                         <div class="news-icon">📰</div>
                         <h3>구글 제미나이, 13세 미만 사용 허가</h3>
                     </div>
-                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
-                        📰 뉴스 기사 캡처 이미지 영역
-                    </div>
+                    <img src="images/gemini-news.jpg" alt="구글 제미나이 13세 미만 사용 허가 뉴스" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0;">
                     <p>2024년 12월, 구글이 13세 미만 아동의 제미나이 사용을 허가했습니다. 이는 AI가 이제 필수 교육 도구로 인정받았다는 의미입니다.</p>
                 </div>
                 
@@ -623,9 +870,7 @@
                         <div class="news-icon">⚠️</div>
                         <h3>AI 부작용, 어떻게 대응할까?</h3>
                     </div>
-                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
-                        📊 AI 부작용 관련 기사 캡처 영역
-                    </div>
+                    <img src="images/ai-side-effects.jpg" alt="AI 부작용 관련 기사" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0;">
                     <p>잘못된 AI 사용으로 인한 부작용들이 보고되고 있습니다. 올바른 AI 교육이 그 어느 때보다 중요한 이유입니다.</p>
                 </div>
                 
@@ -634,9 +879,7 @@
                         <div class="news-icon">💡</div>
                         <h3>젠슨 황, NVIDIA CEO</h3>
                     </div>
-                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
-                        👨‍💼 젠슨 황 사진 영역
-                    </div>
+                    <img src="images/jensen-huang.jpg" alt="젠슨 황 NVIDIA CEO" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0;">
                     <p style="font-style: italic; font-size: 1.1em; color: #2c3e50; line-height: 1.6;">"AI는 인간의 지성을 대체하는 것이 아니라, 인간의 창의력과 독창성을 증폭시키는 도구입니다."</p>
                     <div style="text-align: right; margin-top: 10px; font-size: 14px; color: #666;">— 젠슨 황, NVIDIA CEO</div>
                 </div>
@@ -646,9 +889,7 @@
                         <div class="news-icon">🧠</div>
                         <h3>얀 르쿤, 뉴욕대 교수</h3>
                     </div>
-                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
-                        👨‍🎓 얀 르쿤 사진 영역
-                    </div>
+                    <img src="images/yann-lecun.jpg" alt="얀 르쿤 뉴욕대 교수" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin: 15px 0;">
                     <p style="font-style: italic; font-size: 1.1em; color: #2c3e50; line-height: 1.6;">"우리의 지능은 우리를 인간답게 만드는 것이며, AI는 그 품질의 확장이다."</p>
                     <div style="text-align: right; margin-top: 10px; font-size: 14px; color: #666;">— 얀 르쿤, 뉴욕대 교수</div>
                 </div>
@@ -706,7 +947,7 @@
             </div>
             
             <div class="teacher-card fade-in">
-                <div class="teacher-image">AI</div>
+                <img src="images/teacher-profile.jpg" alt="AI 교육 전문가 프로필" class="teacher-image" style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; margin: 0 auto; display: block;">
                 <div class="teacher-info">
                     <h3>AI 교육 전문가</h3>
                     <div class="role">카카오 계열사 엔지니어 출신</div>
@@ -920,7 +1161,7 @@
                 
                 <div class="trial-feature fade-in stagger-3">
                     <h3>👨‍🏫 전문 상담</h3>
-                    <p>대표 원장에게 직접 상담받으실 수 있습니다</p>
+                    <p>AI 교육 전문가와 직접 상담받으실 수 있습니다</p>
                 </div>
                 
                 <div class="trial-feature fade-in stagger-1">
@@ -947,7 +1188,7 @@
                     <div class="price">3.5<span class="unit">만원</span></div>
                     <p>회차당</p>
                     <ul style="text-align: left; margin: 30px 0;">
-                        <li>1회 60분 수업</li>
+                        <li>1회 50분 수업</li>
                         <li>개별 맞춤 진도</li>
                         <li>실시간 피드백</li>
                         <li>수업 자료 제공</li>
@@ -1015,7 +1256,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="parentName">학부모 성함</label>
+                            <label for="parentName">학부모 이름</label>
                             <input type="text" id="parentName" name="parentName" required>
                         </div>
                         
