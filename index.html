@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등생 AI 툴 교육 | 미래를 준비하는 똑똑한 선택</title>
+    <meta name="description" content="초등학생을 위한 맞춤형 AI 툴 교육. 카카오 출신 전문가가 1:1로 지도하는 비대면 수업. 무료 체험 수업 신청하세요!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .urgent-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            border: 2px solid transparent;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(135deg, #ff5252, #ff7979);
+        }
+        
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        
+        .cta-button.secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* News Section */
+        .news-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .news-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .news-card.warning {
+            border-left-color: #ff6b6b;
+        }
+        
+        .news-card.solution {
+            border-left-color: #4ecdc4;
+        }
+        
+        .news-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .news-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .news-card .news-icon {
+            background: #667eea;
+            color: white;
+        }
+        
+        .news-card.warning .news-icon {
+            background: #ff6b6b;
+        }
+        
+        .news-card.solution .news-icon {
+            background: #4ecdc4;
+        }
+        
+        /* Teacher Section */
+        .teacher-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .teacher-card {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .teacher-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+        
+        .teacher-info h3 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .teacher-info .role {
+            font-size: 1.2em;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .credentials {
+            list-style: none;
+        }
+        
+        .credentials li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .credentials li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+        
+        /* Courses Section */
+        .courses-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .course-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tab-button {
+            padding: 15px 30px;
+            border: 2px solid #667eea;
+            background: transparent;
+            color: #667eea;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .tab-button.active,
+        .tab-button:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+        
+        .course-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: white;
+        }
+        
+        /* Trial Section */
+        .trial-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .trial-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .trial-feature {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Pricing Section */
+        .pricing-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            padding: 50px 30px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 3px solid #f1f5f9;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .pricing-card.recommended {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.recommended:before {
+            content: '추천';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .price {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #667eea;
+            margin: 20px 0;
+        }
+        
+        .price .unit {
+            font-size: 0.6em;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .savings {
+            background: #ffebee;
+            color: #e91e63;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .contact-info {
+            padding: 50px 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 20px;
+            font-size: 20px;
+        }
+        
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.8em;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .section-header p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .teacher-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .news-grid,
+            .course-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #video-tab .course-grid,
+            #image-tab .course-grid,
+            #coding-tab .course-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .vision-section div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .vision-section div[style*="backdrop-filter"] {
+                padding: 30px 20px !important;
+            }
+            
+            /* Limited Enrollment Section Mobile */
+            .container div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="urgent-badge">🚨 시대가 바뀌고 있습니다!</div>
+                <h1>우리 아이의 AI 미래,<br>지금 시작하세요</h1>
+                <p class="subtitle">구글 제미나이 13세 허용 | 교육부 AI 리터러시 정책 발표<br>AI 도구를 검색엔진처럼 자유자재로 사용하는 아이로 키우세요</p>
+                <div>
+                    <a href="#trial" class="cta-button">무료 체험수업 신청</a>
+                    <a href="#courses" class="cta-button secondary">커리큘럼 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI 교육, 왜 지금이어야 할까요?</h2>
+                <p>세계 최고 전문가들의 인사이트와 최신 동향으로 확인하는 AI 교육의 필요성</p>
+            </div>
+            
+            <div class="news-grid">
+                <div class="news-card fade-in stagger-1">
+                    <div class="news-header">
+                        <div class="news-icon">📰</div>
+                        <h3>구글 제미나이, 13세 미만 사용 허가</h3>
+                    </div>
+                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
+                        📰 뉴스 기사 캡처 이미지 영역
+                    </div>
+                    <p>2024년 12월, 구글이 13세 미만 아동의 제미나이 사용을 허가했습니다. 이는 AI가 이제 필수 교육 도구로 인정받았다는 의미입니다.</p>
+                </div>
+                
+                <div class="news-card warning fade-in stagger-2">
+                    <div class="news-header">
+                        <div class="news-icon">⚠️</div>
+                        <h3>AI 부작용, 어떻게 대응할까?</h3>
+                    </div>
+                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
+                        📊 AI 부작용 관련 기사 캡처 영역
+                    </div>
+                    <p>잘못된 AI 사용으로 인한 부작용들이 보고되고 있습니다. 올바른 AI 교육이 그 어느 때보다 중요한 이유입니다.</p>
+                </div>
+                
+                <div class="news-card solution fade-in stagger-3">
+                    <div class="news-header">
+                        <div class="news-icon">💡</div>
+                        <h3>젠슨 황, NVIDIA CEO</h3>
+                    </div>
+                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
+                        👨‍💼 젠슨 황 사진 영역
+                    </div>
+                    <p style="font-style: italic; font-size: 1.1em; color: #2c3e50; line-height: 1.6;">"AI는 인간의 지성을 대체하는 것이 아니라, 인간의 창의력과 독창성을 증폭시키는 도구입니다."</p>
+                    <div style="text-align: right; margin-top: 10px; font-size: 14px; color: #666;">— 젠슨 황, NVIDIA CEO</div>
+                </div>
+                
+                <div class="news-card solution fade-in stagger-1">
+                    <div class="news-header">
+                        <div class="news-icon">🧠</div>
+                        <h3>얀 르쿤, 뉴욕대 교수</h3>
+                    </div>
+                    <div style="width: 100%; height: 200px; background: #f0f0f0; border-radius: 10px; margin: 15px 0; display: flex; align-items: center; justify-content: center; color: #666;">
+                        👨‍🎓 얀 르쿤 사진 영역
+                    </div>
+                    <p style="font-style: italic; font-size: 1.1em; color: #2c3e50; line-height: 1.6;">"우리의 지능은 우리를 인간답게 만드는 것이며, AI는 그 품질의 확장이다."</p>
+                    <div style="text-align: right; margin-top: 10px; font-size: 14px; color: #666;">— 얀 르쿤, 뉴욕대 교수</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section" style="padding: 100px 0; background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: #4ecdc4; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">AI 시대, 우리 아이의 미래는?</h2>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 50px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 50px;">
+                    <h3 style="font-size: 2.2em; margin-bottom: 30px; color: #4ecdc4;">향후 10년간의 사회 변화</h3>
+                    <p style="font-size: 1.3em; line-height: 1.8; margin-bottom: 30px;">
+                        모든 사회는 <strong style="color: #4ecdc4;">AI를 잘 사용하는 사람</strong>과 <strong style="color: #ff6b6b;">못 사용하는 사람</strong>으로 나뉘게 될 것입니다.
+                    </p>
+                    <p style="font-size: 1.1em; line-height: 1.7; opacity: 0.9;">
+                        백과사전에서 구글과 네이버로, 직접 수기로 작성하던 장표에서 엑셀로 변화했듯이, <span style="color: #4ecdc4;">AI는 우리 생활과 업무를 더욱 편리하고 창의적으로 만들어주는 필수 도구</span>가 될 것입니다.
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                    <div style="background: rgba(76, 205, 196, 0.1); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(76, 205, 196, 0.3);">
+                        <div style="font-size: 50px; margin-bottom: 20px;">🧠</div>
+                        <h4 style="margin-bottom: 15px;">마인드셋 교육</h4>
+                        <p>AI를 친숙하고 편하게 사용하며, 별 망설임 없이 자연스럽게 활용하는 마음가짐을 기릅니다</p>
+                    </div>
+                    
+                    <div style="background: rgba(76, 205, 196, 0.1); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(76, 205, 196, 0.3);">
+                        <div style="font-size: 50px; margin-bottom: 20px;">🛠️</div>
+                        <h4 style="margin-bottom: 15px;">기초 역량 구축</h4>
+                        <p>AI 도구를 효과적으로 사용할 수 있는 기본 능력을 체계적으로 길러갑니다</p>
+                    </div>
+                    
+                    <div style="background: rgba(76, 205, 196, 0.1); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(76, 205, 196, 0.3);">
+                        <div style="font-size: 50px; margin-bottom: 20px;">🚀</div>
+                        <h4 style="margin-bottom: 15px;">프로젝트 실습</h4>
+                        <p>간단한 프로젝트를 통해 자신감과 AI 친숙도를 자연스럽게 키워갑니다</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teacher Section -->
+    <section class="teacher-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>강사 이력</h2>
+                <p>카카오 출신 엔지니어의 검증된 실무 경험과 5년간의 교육 노하우</p>
+            </div>
+            
+            <div class="teacher-card fade-in">
+                <div class="teacher-image">AI</div>
+                <div class="teacher-info">
+                    <h3>AI 교육 전문가</h3>
+                    <div class="role">카카오 계열사 엔지니어 출신</div>
+                    <ul class="credentials">
+                        <li>원격교육 전문가 자격증 보유</li>
+                        <li>코딩교육지도사 자격증 보유</li>
+                        <li>카카오 계열사 AI 프로젝트 경험</li>
+                        <li>1:1 코딩교육 5년 경력</li>
+                        <li>Fun코딩, 블록코딩, Python 지도</li>
+                        <li>초등학생 맞춤 교육법 전문</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Enrollment Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.3;">
+            <div style="width: 100%; height: 100%; background-image: radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px); background-size: 40px 40px;"></div>
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <div style="display: inline-block; background: linear-gradient(135deg, #ff6b35, #f7931e); padding: 8px 24px; border-radius: 25px; font-size: 14px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                    ⭐ LIMITED ENROLLMENT
+                </div>
+                <h2 style="font-size: 2.5em; margin-bottom: 15px; background: linear-gradient(135deg, #ff6b35, #f7931e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
+                    소수정예 30명 한정 모집
+                </h2>
+                <p style="font-size: 1.2em; opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                    1:1 맞춤 교육의 높은 품질을 유지하기 위해 학생 수를 엄격히 제한합니다
+                </p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto;">
+                <div style="background: rgba(255, 107, 53, 0.1); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(255, 107, 53, 0.3); text-align: center;">
+                    <div style="font-size: 50px; margin-bottom: 20px;">👥</div>
+                    <h3 style="color: #ff6b35; margin-bottom: 15px; font-size: 1.4em;">현재 모집 현황</h3>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; margin: 20px 0;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span>등록 학생</span>
+                            <span style="color: #ff6b35; font-weight: bold;">18/30명</span>
+                        </div>
+                        <div style="background: rgba(255, 255, 255, 0.2); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #ff6b35, #f7931e); height: 100%; width: 60%; border-radius: 4px; animation: fillUp 2s ease-out;"></div>
+                        </div>
+                    </div>
+                    <p style="font-size: 14px; opacity: 0.8;">⚡ 2025년 8월 1일 기준 잔여 12자리</p>
+                </div>
+                
+                <div style="background: rgba(255, 107, 53, 0.1); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(255, 107, 53, 0.3); text-align: center;">
+                    <div style="font-size: 50px; margin-bottom: 20px;">📅</div>
+                    <h3 style="color: #ff6b35; margin-bottom: 15px; font-size: 1.4em;">수업 가능 일정</h3>
+                    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 20px; margin: 20px 0;">
+                        <div style="color: #4ecdc4; font-weight: bold; margin-bottom: 5px;">상담 후 지정 가능</div>
+                    </div>
+                    <p style="font-size: 14px; opacity: 0.8;">📞 개별 일정 상담 가능</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.2); margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 30px;">
+                    <p style="margin: 0; font-size: 16px;">
+                        <span style="color: #ff6b35; font-weight: bold;">⚠️ 안내:</span> 
+                        정원이 가득 찬 경우, <strong style="color: #4ecdc4;">가장 빠른 수업 가능 날짜</strong>를 개별적으로 안내해드립니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            @keyframes fillUp {
+                from { width: 0%; }
+                to { width: 60%; }
+            }
+        </style>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>체계적인 AI 교육 과정</h2>
+                <p>12주 기본 코스부터 전문 분야 심화 과정까지, 단계별 성장 시스템</p>
+            </div>
+            
+            <div class="course-tabs">
+                <button class="tab-button active" onclick="showTab('basic')">기본 코스</button>
+                <button class="tab-button" onclick="showTab('video')">AI 영상 제작</button>
+                <button class="tab-button" onclick="showTab('image')">AI 이미지 제작</button>
+                <button class="tab-button" onclick="showTab('coding')">AI 코딩</button>
+            </div>
+            
+            <div id="basic-tab" class="course-grid">
+                <div class="course-card fade-in stagger-1">
+                    <div class="course-icon">🎯</div>
+                    <h3>1-2주차: 시작과 방향 설정</h3>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>OT 및 흥미도 설문</li>
+                        <li>AI 데모 쇼케이스</li>
+                        <li>개인별 선호도 상담</li>
+                        <li>2개 트랙(LLM + 흥미 분야) 결정</li>
+                    </ul>
+                </div>
+                
+                <div class="course-card fade-in stagger-2">
+                    <div class="course-icon">🤖</div>
+                    <h3>3-5주차: LLM 기본 트랙</h3>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>ChatGPT, Claude 기초 사용법</li>
+                        <li>프롬프트 작성 및 엔지니어링</li>
+                        <li>창작 글쓰기, 요약, 번역 체험</li>
+                        <li>"나만의 AI 어시스턴트" 프로젝트</li>
+                    </ul>
+                </div>
+                
+                <div class="course-card fade-in stagger-3">
+                    <div class="course-icon">🎨</div>
+                    <h3>6-8주차: 개인 흥미 트랙</h3>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>이미지: DALL-E, Midjourney</li>
+                        <li>영상: Runway ML, Pika</li>
+                        <li>음악: Suno AI 작곡</li>
+                        <li>코딩: Replit AI 웹페이지</li>
+                    </ul>
+                </div>
+                
+                <div class="course-card fade-in stagger-1">
+                    <div class="course-icon">🚀</div>
+                    <h3>9-12주차: 심화 프로젝트</h3>
+                    <ul style="text-align: left; margin: 20px 0;">
+                        <li>더 재미있어한 분야로 집중</li>
+                        <li>나만의 챗봇/웹툰/다큐 등 제작</li>
+                        <li>포트폴리오 완성</li>
+                        <li>최종 발표 및 전시</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: rgba(102, 126, 234, 0.1); border-radius: 15px; color: #666; font-size: 14px;">
+                💡 사용하는 AI 툴과 수업 내용은 학생별로 조금씩 다를 수 있습니다.<br>
+                학생의 눈높이와 흥미 등의 요소에 따라 유동적으로 진행됩니다.
+            </div>
+            
+            <div id="video-tab" class="course-grid" style="display: none;">
+                <div class="course-card">
+                    <div class="course-icon">🎬</div>
+                    <h3>AI 영상 제작 심화</h3>
+                    <p>기본 코스 완료 후 진행하는 전문 영상 제작 코스</p>
+                    <ul style="text-align: center; margin: 20px 0; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">Runway ML, Pika 고급 기능</li>
+                        <li style="margin-bottom: 10px;">스토리보드 기획 및 제작</li>
+                        <li style="margin-bottom: 10px;">AI 영상 편집 및 후반 작업</li>
+                        <li style="margin-bottom: 10px;">미니 다큐멘터리 완성</li>
+                        <li style="margin-bottom: 10px;">영화제 스타일 상영회</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="image-tab" class="course-grid" style="display: none;">
+                <div class="course-card">
+                    <div class="course-icon">🖼️</div>
+                    <h3>AI 이미지 제작 심화</h3>
+                    <p>기본 코스 완료 후 진행하는 전문 이미지 생성 코스</p>
+                    <ul style="text-align: center; margin: 20px 0; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">DALL-E, Midjourney 마스터</li>
+                        <li style="margin-bottom: 10px;">프롬프트 고도화 기법</li>
+                        <li style="margin-bottom: 10px;">웹툰/만화 캐릭터 디자인</li>
+                        <li style="margin-bottom: 10px;">스토리가 있는 이미지 시리즈</li>
+                        <li style="margin-bottom: 10px;">AI 아트북 제작 및 온라인 전시</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="coding-tab" class="course-grid" style="display: none;">
+                <div class="course-card">
+                    <div class="course-icon">💻</div>
+                    <h3>AI 코딩 심화</h3>
+                    <p>기본 코스 완료 후 진행하는 특정 서비스 제작 코스</p>
+                    <ul style="text-align: center; margin: 20px 0; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">Replit AI 고급 활용</li>
+                        <li style="margin-bottom: 10px;">웹사이트 기능 확장</li>
+                        <li style="margin-bottom: 10px;">간단한 앱 서비스 개발</li>
+                        <li style="margin-bottom: 10px;">AI 게임 제작</li>
+                        <li style="margin-bottom: 10px;">개인 포트폴리오 웹사이트 완성</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trial Section -->
+    <section id="trial" class="trial-section">
+        <div class="container">
+            <div class="section-header" style="color: white;">
+                <h2>무료 체험 수업으로 시작하세요</h2>
+                <p>30분 동안 우리 아이에게 맞는 AI 교육이 무엇인지 알아보세요</p>
+            </div>
+            
+            <div class="trial-features">
+                <div class="trial-feature fade-in stagger-1">
+                    <h3>🎯 맞춤 진단</h3>
+                    <p>아이의 AI 관심도와 수준을 정확히 파악합니다</p>
+                </div>
+                
+                <div class="trial-feature fade-in stagger-2">
+                    <h3>📋 수업 계획</h3>
+                    <p>3개월 커리큘럼 방향을 제시해드립니다</p>
+                </div>
+                
+                <div class="trial-feature fade-in stagger-3">
+                    <h3>👨‍🏫 전문 상담</h3>
+                    <p>대표 원장에게 직접 상담받으실 수 있습니다</p>
+                </div>
+                
+                <div class="trial-feature fade-in stagger-1">
+                    <h3>💝 완전 무료</h3>
+                    <p>부담 없이 체험해보고 결정하세요</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-button" style="font-size: 1.3em; padding: 20px 50px;">지금 무료 체험 신청하기</a>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>투명한 수강료 안내</h2>
+                <p>부담 없는 가격으로 시작하고, 패키지로 더 저렴하게</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in stagger-1">
+                    <h3>회차별 결제</h3>
+                    <div class="price">3.5<span class="unit">만원</span></div>
+                    <p>회차당</p>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li>1회 60분 수업</li>
+                        <li>개별 맞춤 진도</li>
+                        <li>실시간 피드백</li>
+                        <li>수업 자료 제공</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card recommended fade-in stagger-2">
+                    <h3>3개월 패키지</h3>
+                    <div class="savings">회차당 5천원 절약!</div>
+                    <div class="price">3.0<span class="unit">만원</span></div>
+                    <p>회차당 (총 36만원)</p>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li>총 12회 수업</li>
+                        <li>체계적인 커리큘럼</li>
+                        <li>월별 진도 리포트</li>
+                        <li>3개월 피드백 리포트</li>
+                        <li>추가 학습 자료 제공</li>
+                    </ul>
+                </div>
+                
+                <div class="pricing-card fade-in stagger-3">
+                    <h3>무료 체험</h3>
+                    <div class="price">0<span class="unit">원</span></div>
+                    <p>30분 체험</p>
+                    <ul style="text-align: left; margin: 30px 0;">
+                        <li>아이 수준 진단</li>
+                        <li>AI 도구 체험</li>
+                        <li>커리큘럼 상담</li>
+                        <li>학습 방향 제시</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>수업 신청 및 문의</h2>
+                <p>궁금한 점이 있으시면 언제든 연락주세요</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-form fade-in">
+                    <h3 style="margin-bottom: 30px;">무료 체험 수업 신청</h3>
+                    
+                    <form id="trialForm">
+                        <div class="form-group">
+                            <label for="childName">아이 이름</label>
+                            <input type="text" id="childName" name="childName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="grade">학년</label>
+                            <select id="grade" name="grade" required>
+                                <option value="">선택해주세요</option>
+                                <option value="1">1학년</option>
+                                <option value="2">2학년</option>
+                                <option value="3">3학년</option>
+                                <option value="4">4학년</option>
+                                <option value="5">5학년</option>
+                                <option value="6">6학년</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="parentName">학부모 성함</label>
+                            <input type="text" id="parentName" name="parentName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">연락처</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course">희망 과정</label>
+                            <select id="course" name="course" required>
+                                <option value="">선택해주세요</option>
+                                <option value="basic">기본 코스 (12주)</option>
+                                <option value="video">AI 영상 제작 심화</option>
+                                <option value="image">AI 이미지 제작 심화</option>
+                                <option value="coding">AI 코딩 심화</option>
+                                <option value="consultation">상담 후 결정</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">궁금한 점이나 특별히 원하는 것이 있나요?</label>
+                            <textarea id="message" name="message" rows="4" placeholder="선택사항입니다"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%; margin: 0;">무료 체험 수업 신청하기</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>전화 문의</h4>
+                            <p>010-1234-5678<br>평일 오전 9시 - 오후 6시</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>이메일 문의</h4>
+                            <p>ai.education@example.com<br>24시간 접수 가능</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <h4>카카오톡 문의</h4>
+                            <p>@ai교육센터<br>빠른 상담 가능</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            // Hide all tabs
+            document.getElementById('basic-tab').style.display = 'none';
+            document.getElementById('video-tab').style.display = 'none';
+            document.getElementById('image-tab').style.display = 'none';
+            document.getElementById('coding-tab').style.display = 'none';
+            
+            // Show selected tab
+            if (tabName === 'basic') {
+                document.getElementById('basic-tab').style.display = 'grid';
+            } else {
+                document.getElementById(tabName + '-tab').style.display = 'grid';
+            }
+            
+            // Update tab buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        // Form submission with Google Sheets integration
+        document.getElementById('trialForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = '신청 중...';
+            submitButton.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = {
+                childName: formData.get('childName'),
+                grade: formData.get('grade'),
+                parentName: formData.get('parentName'),
+                phone: formData.get('phone'),
+                course: formData.get('course'),
+                message: formData.get('message') || '',
+                timestamp: new Date().toLocaleString('ko-KR'),
+                source: 'AI교육 랜딩페이지'
+            };
+            
+            // Google Apps Script Web App URL
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz7njlMT4oW123RcXTg-A5_KJ0C182eP_bFYpyPPYuydCXPqIQ-iCV3-35ZEAmjfezDlQ/exec';
+            
+            // Send to Google Sheets
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(() => {
+                // Success
+                submitButton.textContent = '신청 완료!';
+                submitButton.style.background = '#4ecdc4';
+                
+                // Show success message
+                alert('🎉 체험 수업 신청이 완료되었습니다!\n\n📞 최대한 빠른 시간 내에 연락드리겠습니다.');
+                
+                // Reset form
+                this.reset();
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    submitButton.style.background = '';
+                }, 3000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                
+                // Error handling
+                submitButton.textContent = '신청 실패';
+                submitButton.style.background = '#ff6b6b';
+                
+                alert('❌ 알 수 없는 에러가 발생했습니다.\n계속 반복된다면 직접 연락해주세요!\n\n📞 010-1234-5678\n📧 ai.education@example.com');
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    submitButton.style.background = '';
+                }, 3000);
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
