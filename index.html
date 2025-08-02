@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>초등생 AI 툴 교육 | 미래를 준비하는 똑똑한 선택</title>
+    <title>리드 AI | 미래를 준비하는 똑똑한 선택</title>
     <meta name="description" content="초등학생을 위한 맞춤형 AI 툴 교육. 카카오 출신 전문가가 1:1로 지도하는 비대면 수업. 무료 체험 수업 신청하세요!">
     <style>
         * {
@@ -42,7 +42,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.15"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 2px,
+                rgba(255,255,255,0.03) 2px,
+                rgba(255,255,255,0.03) 4px
+            );
             animation: float 20s ease-in-out infinite;
         }
         
@@ -170,6 +176,7 @@
             justify-content: center;
             margin-right: 15px;
             font-size: 18px;
+            flex-shrink: 0;
         }
         
         .news-card .news-icon {
@@ -567,30 +574,31 @@
                 margin-bottom: 30px;
             }
             
-            /* 뉴스 섹션: 2x2 그리드 유지하되 가독성 향상 */
+            /* 뉴스 섹션: 1개씩 세로 배치로 가독성 향상 */
             .news-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
             .news-card {
-                padding: 18px;
+                padding: 20px;
             }
             
             .news-card h3 {
-                font-size: 1em;
-                margin-bottom: 10px;
-                line-height: 1.2;
+                font-size: 1.05em;
+                margin-bottom: 12px;
+                line-height: 1.3;
             }
             
             .news-card p {
-                font-size: 0.85em;
-                line-height: 1.4;
+                font-size: 0.9em;
+                line-height: 1.5;
             }
             
             /* 이미지 높이 적절히 증가 */
             .news-card img {
-                height: 120px !important;
+                height: 160px !important;
+                margin: 14px 0;
             }
             
             /* 강사 섹션 */
@@ -622,19 +630,16 @@
             
             /* 코스 섹션: 탭 버튼 1줄에 4개 */
             .course-tabs {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 4px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
                 margin-bottom: 25px;
             }
             
             .tab-button {
-                padding: 8px 12px;
-                font-size: 0.75em;
-                flex: 1;
-                min-width: 70px;
-                max-width: 85px;
+                padding: 10px 8px;
+                font-size: 0.8em;
+                min-height: 44px;
             }
             
             /* 코스 카드 */
@@ -751,7 +756,7 @@
             .form-group select,
             .form-group textarea {
                 padding: 10px;
-                font-size: 14px;
+                font-size: 16px;
             }
             
             /* 버튼 크기 축소 */
@@ -925,19 +930,19 @@
                     <div style="background: rgba(76, 205, 196, 0.1); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(76, 205, 196, 0.3);">
                         <div style="font-size: 50px; margin-bottom: 20px;">🧠</div>
                         <h4 style="margin-bottom: 15px;">마인드셋 교육</h4>
-                        <p>AI를 친숙하고 편하게 사용하며, 별 망설임 없이 자연스럽게 활용하는 마음가짐을 기릅니다</p>
+                        <p>AI를 유용한 도구이자 좋은 조력자로 인식하도록 합니다. <br>자기주도적 문제해결 방식을 기반으로 AI를 활용하도록 돕습니다.</p>
                     </div>
                     
                     <div style="background: rgba(76, 205, 196, 0.1); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(76, 205, 196, 0.3);">
                         <div style="font-size: 50px; margin-bottom: 20px;">🛠️</div>
                         <h4 style="margin-bottom: 15px;">기초 역량 구축</h4>
-                        <p>AI 도구를 효과적으로 사용할 수 있는 기본 능력을 체계적으로 길러갑니다</p>
+                        <p>AI를 더욱 효과적으로 사용할 수 있는 기초 역량들을 구축합니다. <br>비판적인 사고와 논리적인 사고를 하도록 돕습니다.</p>
                     </div>
                     
                     <div style="background: rgba(76, 205, 196, 0.1); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(76, 205, 196, 0.3);">
                         <div style="font-size: 50px; margin-bottom: 20px;">🚀</div>
                         <h4 style="margin-bottom: 15px;">프로젝트 실습</h4>
-                        <p>간단한 프로젝트를 통해 자신감과 AI 친숙도를 자연스럽게 키워갑니다</p>
+                        <p>간단한 프로젝트를 통해 자신감과 AI 친숙도를 자연스럽게 키워갑니다.</p>
                     </div>
                 </div>
             </div>
@@ -961,7 +966,7 @@
                         <li>원격교육 전문가 자격증 보유</li>
                         <li>코딩교육지도사 자격증 보유</li>
                         <li>카카오 계열사 AI 프로젝트 경험</li>
-                        <li>1:1 코딩교육 5년 경력</li>
+                        <li>1:1 대면 / 비대면 코딩교육 5년 경력</li>
                         <li>Fun코딩, 블록코딩, Python 지도</li>
                         <li>초등학생 맞춤 교육법 전문</li>
                     </ul>
@@ -1052,44 +1057,44 @@
                 <div class="course-card fade-in stagger-1">
                     <div class="course-icon">🎯</div>
                     <h3>1-2주차: 시작과 방향 설정</h3>
-                    <ul style="text-align: left; margin: 20px 0;">
-                        <li>OT 및 흥미도 설문</li>
-                        <li>AI 데모 쇼케이스</li>
-                        <li>개인별 선호도 상담</li>
-                        <li>2개 트랙(LLM + 흥미 분야) 결정</li>
+                    <ul style="text-align: center; margin: 20px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">OT 및 흥미도 설문</li>
+                        <li style="margin-bottom: 10px;">AI 데모 쇼케이스</li>
+                        <li style="margin-bottom: 10px;">개인별 선호도 상담</li>
+                        <li style="margin-bottom: 10px;">2개 트랙(LLM + 흥미 분야) 결정</li>
                     </ul>
                 </div>
                 
                 <div class="course-card fade-in stagger-2">
                     <div class="course-icon">🤖</div>
                     <h3>3-5주차: LLM 기본 트랙</h3>
-                    <ul style="text-align: left; margin: 20px 0;">
-                        <li>ChatGPT, Claude 기초 사용법</li>
-                        <li>프롬프트 작성 및 엔지니어링</li>
-                        <li>창작 글쓰기, 요약, 번역 체험</li>
-                        <li>"나만의 AI 어시스턴트" 프로젝트</li>
+                    <ul style="text-align: center; margin: 20px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">ChatGPT, Claude 기초 사용법</li>
+                        <li style="margin-bottom: 10px;">프롬프트 작성 및 엔지니어링</li>
+                        <li style="margin-bottom: 10px;">창작 글쓰기, 요약, 번역 체험</li>
+                        <li style="margin-bottom: 10px;">"나만의 AI 어시스턴트" 프로젝트</li>
                     </ul>
                 </div>
                 
                 <div class="course-card fade-in stagger-3">
                     <div class="course-icon">🎨</div>
                     <h3>6-8주차: 개인 흥미 트랙</h3>
-                    <ul style="text-align: left; margin: 20px 0;">
-                        <li>이미지: DALL-E, Midjourney</li>
-                        <li>영상: Runway ML, Pika</li>
-                        <li>음악: Suno AI 작곡</li>
-                        <li>코딩: Replit AI 웹페이지</li>
+                    <ul style="text-align: center; margin: 20px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">이미지: DALL-E, Midjourney</li>
+                        <li style="margin-bottom: 10px;">영상: Runway ML, Pika</li>
+                        <li style="margin-bottom: 10px;">음악: Suno AI 작곡</li>
+                        <li style="margin-bottom: 10px;">코딩: Replit AI 웹페이지</li>
                     </ul>
                 </div>
                 
                 <div class="course-card fade-in stagger-1">
                     <div class="course-icon">🚀</div>
                     <h3>9-12주차: 심화 프로젝트</h3>
-                    <ul style="text-align: left; margin: 20px 0;">
-                        <li>더 재미있어한 분야로 집중</li>
-                        <li>나만의 챗봇/웹툰/다큐 등 제작</li>
-                        <li>포트폴리오 완성</li>
-                        <li>최종 발표 및 전시</li>
+                    <ul style="text-align: center; margin: 20px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">더 재미있어한 분야로 집중</li>
+                        <li style="margin-bottom: 10px;">나만의 챗봇/웹툰/다큐 등 제작</li>
+                        <li style="margin-bottom: 10px;">포트폴리오 완성</li>
+                        <li style="margin-bottom: 10px;">최종 발표 및 전시</li>
                     </ul>
                 </div>
             </div>
@@ -1193,11 +1198,11 @@
                     <h3>회차별 결제</h3>
                     <div class="price">3.5<span class="unit">만원</span></div>
                     <p>회차당</p>
-                    <ul style="text-align: left; margin: 30px 0;">
-                        <li>1회 50분 수업</li>
-                        <li>개별 맞춤 진도</li>
-                        <li>실시간 피드백</li>
-                        <li>수업 자료 제공</li>
+                    <ul style="text-align: center; margin: 30px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">1회 50분 수업</li>
+                        <li style="margin-bottom: 10px;">개별 맞춤 진도</li>
+                        <li style="margin-bottom: 10px;">실시간 피드백</li>
+                        <li style="margin-bottom: 10px;">수업 자료 제공</li>
                     </ul>
                 </div>
                 
@@ -1206,12 +1211,12 @@
                     <div class="savings">회차당 5천원 절약!</div>
                     <div class="price">3.0<span class="unit">만원</span></div>
                     <p>회차당 (총 36만원)</p>
-                    <ul style="text-align: left; margin: 30px 0;">
-                        <li>총 12회 수업</li>
-                        <li>체계적인 커리큘럼</li>
-                        <li>월별 진도 리포트</li>
-                        <li>3개월 피드백 리포트</li>
-                        <li>추가 학습 자료 제공</li>
+                    <ul style="text-align: center; margin: 30px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">총 12회 수업</li>
+                        <li style="margin-bottom: 10px;">체계적인 커리큘럼</li>
+                        <li style="margin-bottom: 10px;">월별 진도 리포트</li>
+                        <li style="margin-bottom: 10px;">3개월 피드백 리포트</li>
+                        <li style="margin-bottom: 10px;">추가 학습 자료 제공</li>
                     </ul>
                 </div>
                 
@@ -1219,11 +1224,11 @@
                     <h3>무료 체험</h3>
                     <div class="price">0<span class="unit">원</span></div>
                     <p>30분 체험</p>
-                    <ul style="text-align: left; margin: 30px 0;">
-                        <li>아이 수준 진단</li>
-                        <li>AI 도구 체험</li>
-                        <li>커리큘럼 상담</li>
-                        <li>학습 방향 제시</li>
+                    <ul style="text-align: center; margin: 30px 0; list-style-type: disc; list-style-position: inside; padding: 0;">
+                        <li style="margin-bottom: 10px;">아이 수준 진단</li>
+                        <li style="margin-bottom: 10px;">AI 도구 체험</li>
+                        <li style="margin-bottom: 10px;">커리큘럼 상담</li>
+                        <li style="margin-bottom: 10px;">학습 방향 제시</li>
                     </ul>
                 </div>
             </div>
@@ -1297,7 +1302,7 @@
                         <div class="contact-icon">📞</div>
                         <div>
                             <h4>전화 문의</h4>
-                            <p>한시적 미진행<br>이메일이나 카카오톡 채널로 상담 이후, 필요 시 전화 상담을 진행하고 있으니 양해 부탁드립니다.</p>
+                            <p>필요 시 전화 상담을 진행 중<br>전화 상담을 원하실 시에는 카카오톡 채널로 연락 부탁드립니다.</p>
                         </div>
                     </div>
                     
@@ -1312,8 +1317,8 @@
                     <a href="http://pf.kakao.com/_xedANn" target="_blank" class="contact-item" style="text-decoration: none; color: inherit; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
                         <div class="contact-icon">💬</div>
                         <div>
-                            <h4>카카오톡 문의</h4>
-                            <p>@리드AI교육센터<br>빠른 상담 가능</p>
+                            <h4>카카오톡 채널 문의</h4>
+                            <p>@리드AI교육센터<br>24시간 접수 가능</p>
                         </div>
                     </a>
                 </div>
@@ -1324,7 +1329,7 @@
     <!-- Footer Section -->
     <footer style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 50px 0; text-align: center;">
         <div class="container">
-            <img src="images/leadai-logo.jpg" alt="Lead AI" style="height: 80px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+            <img src="images/leadai-logo.jpg" alt="Lead AI" style="height: 80px; margin-bottom: 20px; ">
             <h3 style="font-size: 1.5em; margin-bottom: 10px; color: #4ecdc4;">Lead AI Education Center</h3>
             <p style="font-size: 1.1em; margin-bottom: 30px; opacity: 0.9;">초등학생을 위한 전문 AI 교육 센터</p>
             
@@ -1431,7 +1436,7 @@
                 submitButton.textContent = '신청 실패';
                 submitButton.style.background = '#ff6b6b';
                 
-                alert('❌ 알 수 없는 에러가 발생했습니다.\n계속 반복된다면 직접 연락해주세요!\n\n📞 010-1234-5678\n📧 ai.education@example.com');
+                alert('❌ 알 수 없는 에러가 발생했습니다.\n계속 반복된다면 직접 연락해주세요!\n\n📧 kimtei909@gmail.com');
                 
                 // Reset button after 3 seconds
                 setTimeout(() => {
@@ -1476,7 +1481,5 @@
             observer.observe(el);
         });
     </script>
-
-
 </body>
 </html>
