@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+     <!-- 8/20 기준 기존 index.html 상태임. Hero 섹션과 Success 섹션 컬러 변경되기 전 버전 - 어두운 버전 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +26,10 @@
             padding: 0 20px;
         }
         
-        /* Hero Section - 밝은 색상으로 변경 */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #fef3c7 100%);
-            color: #1e293b;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             padding: 100px 0;
             text-align: center;
             position: relative;
@@ -46,8 +47,8 @@
                 45deg,
                 transparent,
                 transparent 2px,
-                rgba(59, 130, 246, 0.03) 2px,
-                rgba(59, 130, 246, 0.03) 4px
+                rgba(255,255,255,0.03) 2px,
+                rgba(255,255,255,0.03) 4px
             );
             animation: float 20s ease-in-out infinite;
         }
@@ -64,15 +65,14 @@
         
         .urgent-badge {
             display: inline-block;
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
             padding: 8px 20px;
             border-radius: 50px;
             margin-bottom: 20px;
             font-size: 14px;
             font-weight: 600;
-            border: 1px solid #fbbf24;
-            color: #92400e;
+            border: 1px solid rgba(255, 255, 255, 0.3);
             animation: pulse 2s infinite;
         }
         
@@ -85,20 +85,19 @@
             font-size: 3.5em;
             font-weight: 800;
             margin-bottom: 20px;
-            color: #0f172a;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
         
         .hero .subtitle {
             font-size: 1.3em;
             margin-bottom: 40px;
-            color: #475569;
+            opacity: 0.9;
             font-weight: 300;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
             color: white;
             padding: 18px 40px;
             border-radius: 50px;
@@ -107,27 +106,25 @@
             font-size: 1.1em;
             margin: 10px;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
             border: 2px solid transparent;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(59, 130, 246, 0.35);
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(135deg, #ff5252, #ff7979);
         }
         
         .cta-button.secondary {
-            background: white;
-            border: 2px solid #e2e8f0;
-            color: #3b82f6;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            background: transparent;
+            border: 2px solid white;
+            box-shadow: none;
         }
         
         .cta-button.secondary:hover {
-            background: #f8fafc;
-            border-color: #3b82f6;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+            background: white;
+            color: #667eea;
         }
         
         /* News Section */
@@ -849,8 +846,8 @@
                 <h1>우리 아이의 AI 미래,<br>리드 AI와 함께<br>지금 시작하세요</h1>
                 <p class="subtitle">
                     같은 아이디어를 가져도<br>
-                    <strong style="color: #dc2626;">AI를 모르는 아이</strong>는 상상으로 끝나지만<br>
-                    <strong style="color: #059669;">AI를 아는 아이</strong>는 앱 개발, 유튜브 크리에이터까지 도전합니다
+                    <strong style="color: #ff6b6b;">AI를 모르는 아이</strong>는 상상으로 끝나지만<br>
+                    <strong style="color: #4ecdc4;">AI를 아는 아이</strong>는 앱 개발, 유튜브 크리에이터까지 도전합니다
                 </p>
                 <div>
                     <a href="#trial" class="cta-button">무료 체험수업 신청</a>
@@ -860,68 +857,67 @@
         </div>
     </section>
 
-    <!-- Success Cases Section - 밝은 색상으로 변경 -->
-    <section style="padding: 80px 0; background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%); color: #1e293b;">
+    <!-- Success Cases Section -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
         <div class="container">
-            <div class="section-header" style="color: #1e293b;">
-                <h2 style="color: #0f172a;">이미 시작한 아이들의 놀라운 변화</h2>
-                <p style="color: #475569;">AI 교육을 통해 상상을 현실로 만든 아이들의 이야기</p>
+            <div class="section-header" style="color: white;">
+                <h2>이미 시작한 아이들의 놀라운 변화</h2>
             </div>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
                 
-                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'; this.style.borderColor='#3b82f6';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                     <div style="font-size: 50px; margin-bottom: 20px; text-align: center;">📱</div>
-                    <h3 style="margin-bottom: 15px; text-align: center; color: #3b82f6; font-size: 1.2em;">6학년 김○○ 학생</h3>
-                    <p style="font-size: 1.05em; line-height: 1.6; text-align: center; color: #475569;">
+                    <h3 style="margin-bottom: 15px; text-align: center; color: #4ecdc4;">6학년 김○○ 학생</h3>
+                    <p style="font-size: 1.1em; line-height: 1.6; text-align: center;">
                         "아이디어와 기획만 있었는데, 코딩 없이
-                        <strong style="color: #3b82f6;">나만의 설문조사 앱</strong>을 만들었어요!"
+                        <strong style="color: #4ecdc4;">나만의 설문조사 앱</strong>을 만들었어요!"
                     </p>
-                    <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); padding: 15px; border-radius: 12px; margin-top: 20px; text-align: center; border: 1px solid #bfdbfe;">
-                        <small style="color: #1e40af; font-weight: 600;">🎯 결과물: 실제 동작하는 웹 앱</small>
+                    <div style="background: rgba(76, 205, 196, 0.2); padding: 15px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                        <small style="opacity: 0.9;">🎯 결과물: 실제 동작하는 웹 앱</small>
                     </div>
                 </div>
                 
-                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'; this.style.borderColor='#3b82f6';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                     <div style="font-size: 50px; margin-bottom: 20px; text-align: center;">🎬</div>
-                    <h3 style="margin-bottom: 15px; text-align: center; color: #3b82f6; font-size: 1.2em;">4학년 박○○ 학생</h3>
-                    <p style="font-size: 1.05em; line-height: 1.6; text-align: center; color: #475569;">
+                    <h3 style="margin-bottom: 15px; text-align: center; color: #4ecdc4;">4학년 박○○ 학생</h3>
+                    <p style="font-size: 1.1em; line-height: 1.6; text-align: center;">
                         "영상 편집을 모르는 상태에서, 제 아이디어로만
-                        <strong style="color: #3b82f6;">유튜브 쇼츠</strong>를 만들었어요!"
+                        <strong style="color: #4ecdc4;">유튜브 쇼츠</strong>를 만들었어요!"
                     </p>
-                    <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); padding: 15px; border-radius: 12px; margin-top: 20px; text-align: center; border: 1px solid #bfdbfe;">
-                        <small style="color: #1e40af; font-weight: 600;">🎯 결과물: 1분 분량 쇼츠 10개</small>
+                    <div style="background: rgba(76, 205, 196, 0.2); padding: 15px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                        <small style="opacity: 0.9;">🎯 결과물: 1분 분량 쇼츠 10개</small>
                     </div>
                 </div>
                 
-                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'; this.style.borderColor='#3b82f6';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                     <div style="font-size: 50px; margin-bottom: 20px; text-align: center;">📚</div>
-                    <h3 style="margin-bottom: 15px; text-align: center; color: #3b82f6; font-size: 1.2em;">5학년 이○○ 학생</h3>
-                    <p style="font-size: 1.05em; line-height: 1.6; text-align: center; color: #475569;">
-                        "AI와 함께 <strong style="color: #3b82f6;">나만의 단편소설</strong>을 제작하고, 
+                    <h3 style="margin-bottom: 15px; text-align: center; color: #4ecdc4;">5학년 이○○ 학생</h3>
+                    <p style="font-size: 1.1em; line-height: 1.6; text-align: center;">
+                        "AI와 함께 <strong style="color: #4ecdc4;">나만의 단편소설</strong>을 제작하고, 
                         일러스트까지 만들었어요!"
                     </p>
-                    <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); padding: 15px; border-radius: 12px; margin-top: 20px; text-align: center; border: 1px solid #bfdbfe;">
-                        <small style="color: #1e40af; font-weight: 600;">🎯 결과물: 20페이지 단편소설</small>
+                    <div style="background: rgba(76, 205, 196, 0.2); padding: 15px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                        <small style="opacity: 0.9;">🎯 결과물: 20페이지 단편소설</small>
                     </div>
                 </div>
                 
-                <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 20px 40px rgba(0, 0, 0, 0.12)'; this.style.borderColor='#3b82f6';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.08)'; this.style.borderColor='#e2e8f0';">
+                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
                     <div style="font-size: 50px; margin-bottom: 20px; text-align: center;">🎵</div>
-                    <h3 style="margin-bottom: 15px; text-align: center; color: #3b82f6; font-size: 1.2em;">2학년 최○○ 학생</h3>
-                    <p style="font-size: 1.05em; line-height: 1.6; text-align: center; color: #475569;">
+                    <h3 style="margin-bottom: 15px; text-align: center; color: #4ecdc4;">2학년 최○○ 학생</h3>
+                    <p style="font-size: 1.1em; line-height: 1.6; text-align: center;">
                         "평소 좋아하던 노래를 바꿔서 
-                        <strong style="color: #3b82f6;">나만의 노래</strong>를 AI와 함께 만들었어요!"
+                        <strong style="color: #4ecdc4;">나만의 노래</strong>를 AI와 함께 만들었어요!"
                     </p>
-                    <div style="background: linear-gradient(135deg, #dbeafe, #eff6ff); padding: 15px; border-radius: 12px; margin-top: 20px; text-align: center; border: 1px solid #bfdbfe;">
-                        <small style="color: #1e40af; font-weight: 600;">🎯 결과물: 2분 길이 완성된 음악</small>
+                    <div style="background: rgba(76, 205, 196, 0.2); padding: 15px; border-radius: 10px; margin-top: 20px; text-align: center;">
+                        <small style="opacity: 0.9;">🎯 결과물: 2분 길이 완성된 음악</small>
                     </div>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #fef2f2, #fee2e2); border-radius: 20px; border: 2px solid #fecaca;">
-                <h3 style="color: #dc2626; margin-bottom: 15px; font-size: 1.5em;">⚠️ 반면, AI를 모르는 아이들은?</h3>
-                <p style="font-size: 1.1em; color: #7f1d1d;">
+            <div style="text-align: center; margin-top: 50px; padding: 30px; background: rgba(255, 107, 107, 0.2); border-radius: 20px; border: 2px solid rgba(255, 107, 107, 0.3);">
+                <h3 style="color: #ff6b6b; margin-bottom: 15px; font-size: 1.5em;">⚠️ 반면, AI를 모르는 아이들은?</h3>
+                <p style="font-size: 1.1em; opacity: 0.9;">
                     같은 상상력과 아이디어를 가져도<br>
                     <strong>"어떻게 만들지 모르겠어..."</strong>라며 포기하게 됩니다
                 </p>
@@ -1021,7 +1017,7 @@
                             <div style="background: linear-gradient(90deg, #ff6b35, #f7931e); height: 100%; width: 60%; border-radius: 4px; animation: fillUp 2s ease-out;"></div>
                         </div>
                     </div>
-                    <p style="font-size: 14px; opacity: 0.8;">⚡ 2025년 8월 20일 기준 잔여 11자리</p>
+                    <p style="font-size: 14px; opacity: 0.8;">⚡ 2025년 8월 15일 기준 잔여 11자리</p>
                 </div>
                 
                 <div style="background: rgba(255, 107, 53, 0.1); backdrop-filter: blur(10px); padding: 40px 30px; border-radius: 20px; border: 2px solid rgba(255, 107, 53, 0.3); text-align: center;">
